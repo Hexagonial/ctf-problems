@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <style>
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+        p {
+            text-align: center; 
+            margin-bottom: 50px;
+        }
+        div {text-align: center;}
+
+        .links {
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .links li {
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+        }
+    </style>    
+
+
+    <head>
+    <title>The OOB Blog!</title>
+    </head>
+
+    <body>
+        <h1>Out of Bounds Glitch #{{index}}</h1>
+        <h2>{{glitch}}</h2>
+
+        <div>
+            <img src='/static/images/{{gif}}'/>
+        </div>
+        
+        <p>
+            {% for line in description %}
+                {{line}}<br>
+            {% endfor %}
+        </p>
+
+        <p style="font-size:75%;">{{credit}}</p>
+
+        <ul class="links">
+        {% with prev = index-1 %}
+            <li><a href="/post/{{prev}}">Previous Post</a></li>
+        {% endwith %}
+        {% with next = index+1 %}
+            <li><a href="/post/{{next}}">Next Post</a></li>
+        {% endwith %}
+        </ul>
+    </body>
+    <!-- Oh... by the way, looking at source files for the website is still in bounds! -->
+</html>
