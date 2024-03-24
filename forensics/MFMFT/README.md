@@ -22,7 +22,7 @@ Oh, this might help:
 Wrap what you find with `texsaw{}`! If the password is `password`, enter `texsaw{password}`.
 
 ## Solution
-The file name for each entry in the MFT is stored 0xda bytes from the start of the entry (denoted by FILE0), and each entry is 0x400 bytes long. Each filename can simply be retrieved by the formula _i_*0x400+0xda where _i_ is the index.
+The file name for each entry in the MFT is stored 0xda bytes from the start of the entry (denoted by FILE0), and each entry is 0x400 bytes long. Each filename can simply be retrieved by the formula _i_*0x400+0xda where _i_ is an index given by the list in the description.
 
 You can find the basic structure of an NTFS MFT entry [here](https://www.futurelearn.com/info/courses/introduction-to-malware-investigations/0/steps/146529).
 
